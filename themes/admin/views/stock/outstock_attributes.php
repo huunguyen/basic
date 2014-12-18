@@ -1,0 +1,43 @@
+<?php
+$this->pageTitle = Yii::app()->name;
+$this->breadcrumbs = CMap::mergeArray($this->breadcrumbs, array(
+            array('name' => 'Lô Hàng'),
+        ));
+?>
+
+<div class="widget">
+    <?php
+    $this->widget('bootstrap.widgets.TbGridView', array(
+        'type' => 'striped bordered condensed',
+        'dataProvider' => $model->searchPAOutStock($product->id_product),
+        'pagerCssClass' => 'pagination pagination-right',
+        'template' => '{summary}{items}{pager}',
+        'enablePagination' => true,
+        'summaryText' => 'Chi Tiết Sản Phẩm ['.$product->name.'] Trong Kho Hàng [CTY QCDN]. Hiển thị từ {start}-{end} của {count} kết quả.',
+        'columns' => array(            
+            array('name' => 'idProduct.name', 'header' => 'Tên Chung'),
+            array('name' => 'idProductAttribute.fullname', 'header' => 'Tên Sản Phẩm'),     
+            array('name' => 'quantity', 'header' => 'Số Lượng'),
+            array(
+        'class' => 'bootstrap.widgets.TbButtonColumn',
+        'header' => 'Quản Trị',
+        'template' => '{show}',
+        'buttons' => array(
+             'show' => array
+                (
+                'label' => "Xem chi tiết",
+                'icon' => 'icon-th',
+                'url' => 'Yii::app()->createUrl("product/viewAttribute", array("id"=>$data["id_product_attribute"]))',
+                'options' => array(
+                    'class' => 'view',
+                ),
+            )
+        ),
+        'htmlOptions' => array(
+            'style' => 'width: 80px; text-align: center; vertical-align: middle',
+        ),
+                )
+        ),
+    ));
+    ?>
+</div>

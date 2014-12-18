@@ -1,6 +1,6 @@
 <?php
 
-$yii = dirname(__FILE__).'/yii-1.1.15/yii.php';
+$yii = dirname(__FILE__).'/protected/libs/Yii/yii.php';
 $config = dirname(__FILE__).'/protected/config/front.php';
   
 // Remove the following lines when in production mode
@@ -24,29 +24,29 @@ $app = Yii::createWebApplication($config);
 //}
 /* please, uncomment the following if you are using ZF library */
 
-Yii::import('extensions.EZendAutoloader', true);
+Yii::import('application.extensions.EZendAutoloader', true);
 //
 EZendAutoloader::$prefixes = array('Zend','Skoch','Polycast');
-EZendAutoloader::$basePath = Yii::getPathOfAlias('libs') . DIRECTORY_SEPARATOR;
+EZendAutoloader::$basePath = Yii::getPathOfAlias('application.libs') . DIRECTORY_SEPARATOR;
 Yii::registerAutoloader(array("EZendAutoloader", "loadClass"), true);
 //
-Yii::setPathOfAlias('Imagine',Yii::getPathOfAlias('libs.Imagine'));
-Yii::import('extensions.EImagineAutoloader', true);
+Yii::setPathOfAlias('Imagine',Yii::getPathOfAlias('application.libs.Imagine'));
+Yii::import('application.extensions.EImagineAutoloader', true);
 Yii::registerAutoloader(array("EImagineAutoloader", "loadClass"), true);
 //
-Yii::setPathOfAlias('paypal',Yii::getPathOfAlias('vendors.paypal'));
-Yii::import('vendors.composer.ComposerAutoloaderInitPaypal', true);
+Yii::setPathOfAlias('paypal',Yii::getPathOfAlias('application.vendors.paypal'));
+Yii::import('application.vendors.composer.ComposerAutoloaderInitPaypal', true);
 Yii::registerAutoloader(array("ComposerAutoloaderInitPaypal", "getLoader"), true);
 
 
-Yii::setPathOfAlias('phpexcel',Yii::getPathOfAlias('vendors.Classes'));
-Yii::import('vendors.Classes.PHPExcel', true);
+Yii::setPathOfAlias('phpexcel',Yii::getPathOfAlias('application.vendors.Classes'));
+Yii::import('application.vendors.Classes.PHPExcel', true);
 
-Yii::setPathOfAlias('phpword',Yii::getPathOfAlias('vendors.Classes'));
-Yii::import('vendors.Classes.PHPWord', true);
+Yii::setPathOfAlias('phpword',Yii::getPathOfAlias('application.vendors.Classes'));
+Yii::import('application.vendors.Classes.PHPWord', true);
 
-Yii::setPathOfAlias('phppowerpoint',Yii::getPathOfAlias('vendors.Classes'));
-Yii::import('vendors.Classes.PHPPowerPoint', true);
+Yii::setPathOfAlias('phppowerpoint',Yii::getPathOfAlias('application.vendors.Classes'));
+Yii::import('application.vendors.Classes.PHPPowerPoint', true);
 
 //  here we go!
 $app->runEnd('front');
