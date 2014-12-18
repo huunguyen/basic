@@ -52,7 +52,7 @@ return array(
 //        ),
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=nhadatthuongmai.com;dbname=simple_db',
+            'connectionString' => 'mysql:host=localhost;dbname=simple_db',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '@dm!n1978',
