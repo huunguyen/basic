@@ -9,6 +9,25 @@ nho.cuvan@gmail.com
 Hướng dẫn sử dụng git tại link bên dưới:
 http://labs.septeni-technology.jp/none/su-dung-git-trong-ubuntu/
 https://help.github.com/articles/generating-ssh-keys/
+https://github.com/github/gitignore
 
 https://github.com/huunguyen/basic
 brach: master
+
+Cài đặc chung:
+linux - ubuntu
+apache
+php
+mysql
+phpmyadmin
+workbench
+
+module apache: 
+rewrite_module
+
+module php:
+curl
+gd
+mcrypt
+
+Kiểm tra các yêu cầu cơ bản đó thì gần như site sẽ chạy mà không bị lỗi gì.
