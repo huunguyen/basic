@@ -5,3 +5,6 @@ Nếu các bạn nào có quan tâm thì liên hệ với nhóm cùng phát tri�
 Thông tin thành viên của nhóm hiện tại:
 nguyenhuunguyen@gmail.com 84938008404
 nho.cuvan@gmail.com
+
+Hướng dẫn sử dụng git tại link bên dưới:
+http://labs.septeni-technology.jp/none/su-dung-git-trong-ubuntu/
