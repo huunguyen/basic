@@ -19,6 +19,18 @@ class SiteController extends BEController {
             ),
         );
     }
+    /**
+     * change setup
+     */
+    public function actionSetup(){
+        
+    }
+    /**
+     * load setup
+     */
+    public function actionLoadSetup(){
+        
+    }
 
     /**
      * This is the default 'index' action that is invoked

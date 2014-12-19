@@ -1,6 +1,16 @@
+# generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
 assets/*
 !assets/.gitignore
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
+
+# Composer files
+composer.phar

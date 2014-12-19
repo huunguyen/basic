@@ -262,10 +262,12 @@ var Layout = function () {
         },
 
         getLayoutImgPath: function() {
+            //console.log(Metronic.getAssetsPath() + layoutImgPath);
             return Metronic.getAssetsPath() + layoutImgPath;
         },
 
         getLayoutCssPath: function() {
+            //console.log(Metronic.getAssetsPath() + layoutCssPath);
             return Metronic.getAssetsPath() + layoutCssPath;
         }
     };

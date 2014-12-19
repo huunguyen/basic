@@ -22,7 +22,7 @@
 <script src="<?=$this->assetsBase?>/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
 <script src="<?=$this->assetsBase?>/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
 <script src="<?=$this->assetsBase?>/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-<script src="<?=$this->assetsBase?>/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="<?=$this->assetsBase?>/global/plugins/jquery.cookie.js" type="text/javascript"></script>
 <script src="<?=$this->assetsBase?>/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="<?=$this->assetsBase?>/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
