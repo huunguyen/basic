@@ -8,6 +8,7 @@ nho.cuvan@gmail.com
 
 Hướng dẫn sử dụng git tại link bên dưới:
 http://labs.septeni-technology.jp/none/su-dung-git-trong-ubuntu/
+https://help.github.com/articles/generating-ssh-keys/
 
 https://github.com/huunguyen/basic
 brach: master
