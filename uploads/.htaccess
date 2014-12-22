@@ -1,1 +1,5 @@
 deny from all
+RewriteEngine On
+# you can add whatever extensions you want routed to your php script
+RewriteCond %{REQUEST_URI} \.(doc|zip|pdf)$ [NC]
+RewriteRule ^(.*)$ /download-file.php?filename=$1 [L]
