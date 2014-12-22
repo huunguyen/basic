@@ -14,9 +14,9 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
-                        'application.libs.*',
-                'application.vendors.*',
-                'application.vendors.Classes.*',
+        'application.libs.*',
+        'application.vendors.*',
+        'application.vendors.Classes.*',
     ),
     'behaviors' => array(
         'runEnd' => array(
@@ -81,5 +81,15 @@ return array(
     'params' => array(
         // this is used in contact page
         'adminEmail' => 'nguyen.huu.nguyen@gmail.com',
+        'name' => 'Cty QCDN',
+        'host' => 'smtp.gmail.com',
+        'email' => 'mail.khachhang.info@gmail.com',
+        'password' => '19008198',
+        'phone' => '0989100514',
+        'ssl' => 'tls',
+        'port' => '587',
+        'auth' => 'login',
+        'linkfrontend' => 'http://localhost/basic/',
+        'linkbackend' => 'http://localhost/basic/admin/',
     ),
 );

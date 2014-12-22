@@ -250,5 +250,42 @@ class SiteController extends BEController {
 
         echo "okie";
     }
+public function actionSend() {
+       $body = "theOutput";
+            try {
+                $config = array(
+                    'host' => Yii::app()->params["host"],
+                    'auth' => Yii::app()->params["auth"],
+                    'username' => Yii::app()->params["email"],
+                    'password' => Yii::app()->params["password"],
+                    'ssl' => Yii::app()->params["ssl"],
+                    'port' => Yii::app()->params["port"]
+                );
+                //var_dump($config);exit();
+                $transport = new Zend_Mail_Transport_Smtp(Yii::app()->params["host"], $config);
+                Zend_Mail::setDefaultTransport($transport);
+                Zend_Mail::setDefaultFrom(Yii::app()->params["email"], Yii::app()->params["name"]);
+                $mail = new Zend_Mail('utf-8');
+                $mail->setHeaderEncoding(Zend_Mime::ENCODING_QUOTEDPRINTABLE);
+                $mail->setReplyTo(Yii::app()->params["email"], Yii::app()->params["name"]);
+                $mail->setFrom(Yii::app()->params["email"], Yii::app()->params["name"]);
+                //$mail->addCc(Yii::app()->params["email"], Yii::app()->params["name"]);
+                $mail->addBcc(Yii::app()->params["email"], Yii::app()->params["name"]);
 
+                $mail->addTo('nguyen.huu.nguyen@gmail.com', 'Test mail yii');
+                $mail->addHeader('MIME-Version', '1.0');
+                $mail->addHeader('Content-Transfer-Encoding', '8bit');
+                $mail->addHeader('X-Mailer:', 'PHP/' . phpversion());
+
+                $mail->setSubject("Thông tin hóa đơn mua hàng");
+                $mail->setBodyText($body);
+                $mail->setBodyHtml($body);
+                $mail->send($transport);
+                Yii::app()->user->setFlash('success', '<strong>Thông tin đã được gửi thành công! </strong>');
+                $this->redirect(array('site/index'));
+            } catch (Exception $e) {
+                Yii::app()->user->setFlash('error', '<strong>Thất bại! </strong> ' . $e->getMessage());
+                $this->redirect(array('site/index'));
+            }
+    }
 }
