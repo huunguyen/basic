@@ -10,7 +10,8 @@ Hướng dẫn sử dụng git tại link bên dưới:
 http://labs.septeni-technology.jp/none/su-dung-git-trong-ubuntu/
 https://help.github.com/articles/generating-ssh-keys/
 https://github.com/github/gitignore
-
+http://nvie.com/posts/a-successful-git-branching-model/
+http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/
 https://github.com/huunguyen/basic
 brach: master
 
