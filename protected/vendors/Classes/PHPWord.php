@@ -32,6 +32,10 @@ if(!defined('PHPWORD_BASE_PATH')) {
     PHPWord_Autoloader::Register();
 }
 
+function utf8encode_dummy($data) {
+  return $data;
+}
+
 
 /**
  * PHPWord

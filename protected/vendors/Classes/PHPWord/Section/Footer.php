@@ -48,6 +48,13 @@ class PHPWord_Section_Footer {
 	 * @var int
 	 */
 	private $_rId;
+   
+  /**
+   * Section Settings
+   * 
+   * @var PHPWord_Section_Settings
+   */
+  private $_sectionSettings;
 	
 	/**
 	 * Footer Element Collection
@@ -59,8 +66,9 @@ class PHPWord_Section_Footer {
 	/**
 	 * Create a new Footer
 	 */
-	public function __construct($sectionCount) {
+	public function __construct($sectionCount, $sectionSettings = null) {
 		$this->_footerCount = $sectionCount;
+    $this->_sectionSettings = $sectionSettings;
 	}
 	
 	/**
@@ -72,7 +80,7 @@ class PHPWord_Section_Footer {
 	 * @return PHPWord_Section_Text
 	 */
 	public function addText($text, $styleFont = null, $styleParagraph = null) {
-		$givenText = utf8_encode($text);
+		$givenText = utf8encode_dummy($text);
 		$text = new PHPWord_Section_Text($givenText, $styleFont, $styleParagraph);
 		$this->_elementCollection[] = $text;
 		return $text;
@@ -107,7 +115,7 @@ class PHPWord_Section_Footer {
 	 * @return PHPWord_Section_Table
 	 */
 	public function addTable($style = null) {
-		$table = new PHPWord_Section_Table('footer', $this->_footerCount, $style);
+		$table = new PHPWord_Section_Table('footer', $this->_footerCount, $style, $this->_sectionSettings);
 		$this->_elementCollection[] = $table;
 		return $table;
 	}
@@ -162,7 +170,7 @@ class PHPWord_Section_Footer {
 	 * @return PHPWord_Section_Footer_PreserveText
 	 */
 	public function addPreserveText($text, $styleFont = null, $styleParagraph = null) {
-		$text = utf8_encode($text);
+		$text = utf8encode_dummy($text);
 		$ptext = new PHPWord_Section_Footer_PreserveText($text, $styleFont, $styleParagraph);
 		$this->_elementCollection[] = $ptext;
 		return $ptext;

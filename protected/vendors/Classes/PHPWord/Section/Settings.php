@@ -153,6 +153,13 @@ class PHPWord_Section_Settings {
 	 * @var int
 	 */
 	private $_borderBottomColor;
+  
+  /**
+  * Reduce Table Widths to Fit
+  * 
+  * @var bool
+  */
+  private $_reduceTableWidthsToFit;
 	
 	/**
 	 * Create new Section Settings
@@ -173,6 +180,7 @@ class PHPWord_Section_Settings {
 		$this->_borderRightColor = null;
 		$this->_borderBottomSize = null;
 		$this->_borderBottomColor = null;
+    $this->_reduceTableWidthsToFit = true;
 	}
 	
 	/**
@@ -297,6 +305,14 @@ class PHPWord_Section_Settings {
 	public function getPageSizeW() {
 		return $this->_pageSizeW;
 	}
+  
+  /**
+  * Get Inside Margins Page Width
+  * 
+  */
+  public function insideMarginsPageW() {
+    return $this->_pageSizeW - ($this->_marginLeft + $this->_marginRight);
+  }
 	
 	/**
 	 * Get Page Size Height
@@ -511,5 +527,23 @@ class PHPWord_Section_Settings {
 	public function getBorderBottomColor() {
 		return $this->_borderBottomColor;
 	}
+  
+  /**
+   * Set Reduce Table Widths to Fit value
+   * 
+   * @param bool $pValue
+   */
+  public function setReduceTableWidthsToFit($pValue = null) {
+    $this->_reduceTableWidthsToFit = $pValue;
+  }
+  
+  /**
+   * Get Reduce Table Widths to Fit value
+   * 
+   * @return bool
+   */
+  public function getReduceTableWidthsToFit() {
+    return $this->_reduceTableWidthsToFit;
+  }
 }
 ?>
